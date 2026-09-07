@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roudhotul Izzah — Portfolio</title>
+    <style>
+        :root {
+            --bg: #090a0c;
+            --panel: #131417;
+            --panel2: #101114;
+            --text: #f5f5f3;
+            --muted: #96979d;
+            --line: #282a2f;
+            --accent: #b39cff
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+            line-height: 1.6
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        nav {
+            position: fixed;
+            z-index: 30;
+            top: 18px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            padding: 15px 25px;
+            border: 1px solid #292a30;
+            border-radius: 999px;
+            background: rgba(13, 14, 17, .86);
+            backdrop-filter: blur(18px);
+            box-shadow: 0 10px 40px #0007
+        }
+
+        .logo {
+            font-weight: 800;
+            margin-right: 8px
+        }
+
+        .logo span {
+            color: #777
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 23px;
+            font-size: 13px;
+            color: #aaa
+        }
+
+        .navlinks a:hover {
+            color: #fff
+        }
+
+        .hero {
+            min-height: 100vh;
+            max-width: 1250px;
+            margin: auto;
+            padding: 150px 6% 90px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 70px
+        }
+
+        .eyebrow,
+        .num {
+            font-size: 12px;
+            color: #777;
+            letter-spacing: 2.5px;
+            text-transform: uppercase
+        }
+
+        .eyebrow {
+            margin-bottom: 20px
+        }
+
+        h1 {
+            font-size: clamp(52px, 7vw, 92px);
+            line-height: .98;
+            letter-spacing: -5px
+        }
+
+        .dim {
+            color: #6d6e74
+        }
+
+        .hero p {
+            color: #999;
+            font-size: 18px;
+            max-width: 650px;
+            margin-top: 25px
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 32px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            border: 1px solid #3b3d43;
+            border-radius: 999px;
+            padding: 11px 18px;
+            font-size: 13px
+        }
+
+        .btn.fill {
+            background: #f2f2ef;
+            color: #111;
+            border-color: #f2f2ef
+        }
+
+        .photo {
+            width: 275px;
+            height: 350px;
+            border: 1px solid #303239;
+            border-radius: 25px;
+            background: linear-gradient(145deg, #23252a, #101114);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5e6067;
+            font-size: 12px;
+            flex-shrink: 0
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        section {
+            max-width: 1250px;
+            margin: auto;
+            padding: 105px 6%
+        }
+
+        .section-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 38px
+        }
+
+        .section-top h2 {
+            font-size: 42px;
+            line-height: 1.05;
+            letter-spacing: -2px
+        }
+
+        .section-top p {
+            max-width: 430px;
+            color: #888;
+            font-size: 14px
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 70px
+        }
+
+        .about-text {
+            font-size: 18px;
+            color: #aaa
+        }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line)
+        }
+
+        .fact {
+            background: var(--panel);
+            padding: 22px
+        }
+
+        .fact small {
+            color: #666
+        }
+
+        .fact strong {
+            display: block;
+            margin-top: 5px
+        }
+
+        .skillgrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px
+        }
+
+        .skill {
+            padding: 25px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--panel)
+        }
+
+        .skill h3 {
+            font-size: 18px;
+            margin-bottom: 7px
+        }
+
+        .skill p {
+            font-size: 13px;
+            color: #85858a
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 17px
+        }
+
+        .tag {
+            font-size: 11px;
+            color: #aaa;
+            border: 1px solid #34363c;
+            border-radius: 99px;
+            padding: 5px 9px
+        }
+
+        .timeline {
+            border-left: 1px solid #303239;
+            margin-left: 7px;
+            padding-left: 31px;
+            display: grid;
+            gap: 35px
+        }
+
+        .job {
+            position: relative
+        }
+
+        .job:before {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #eee
+        }
+
+        .job .date {
+            color: #666;
+            font-size: 12px
+        }
+
+        .job h3 {
+            font-size: 20px;
+            margin: 5px 0
+        }
+
+        .job p {
+            color: #888;
+            font-size: 14px;
+            max-width: 780px
+        }
+
+        .subhead {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 15px 0 30px
+        }
+
+        .subhead h3 {
+            font-size: 22px
+        }
+
+        .subhead .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: #17211d;
+            border: 1px solid #254236;
+            display: grid;
+            place-items: center;
+            color: #55d98c
+        }
+
+        .projectgrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px
+        }
+
+        .project {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: #151619;
+            transition: .25s
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            border-color: #474951
+        }
+
+        .project-image {
+            height: 230px;
+            position: relative;
+            overflow: hidden;
+            background: #191b20
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .browserbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 38px;
+            background: #101114;
+            display: flex;
+            align-items: center;
+            padding: 0 13px;
+            gap: 6px;
+            color: #686a71;
+            font: 11px monospace;
+            z-index: 2
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #34363b
+        }
+
+        .path {
+            margin-left: 8px
+        }
+
+        .year {
+            margin-left: auto
+        }
+
+        .mock {
+            height: 100%;
+            padding: 65px 28px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #171525, #29204a);
+        }
+
+        .mock-inner {
+            width: 86%;
+            height: 72%;
+            border: 1px solid #5b4c89;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #201d34, #121318);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9e8cff;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .mock.jat {
+            background: #C4C4C4;
+            padding: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+        }
+
+        .mock.jat img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .project-body {
+            padding: 24px 25px 26px
+        }
+
+        .project-title {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: start
+        }
+
+        .project h3 {
+            font-size: 23px;
+            letter-spacing: -.6px
+        }
+
+        .type {
+            font-size: 11px;
+            border: 1px solid #4c3d89;
+            color: #aa98ff;
+            border-radius: 99px;
+            padding: 5px 9px;
+            white-space: nowrap
+        }
+
+        .project p {
+            font-size: 13px;
+            color: #8c8d93;
+            margin-top: 8px
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 22px;
+            font: 600 13px monospace;
+            color: #eee
+        }
+
+
+        .org-card {
+            padding: 25px 0;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .org-card:last-child {
+            border-bottom: 0
+        }
+
+        .org-card .date {
+            font-size: 12px;
+            color: #666
+        }
+
+        .org-card h3 {
+            font-size: 20px;
+            margin-top: 4px
+        }
+
+        .org-card .role {
+            color: #b39cff;
+            font-size: 13px;
+            font-weight: 600
+        }
+
+        .org-card p {
+            font-size: 14px;
+            color: #92939a;
+            margin-top: 8px;
+            max-width: 850px
+        }
+
+        /* ORGANIZATION — TWO COLUMN LAYOUT */
+
+        .org-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-top: 55px;
+        }
+
+        .org-column {
+            padding: 0 45px;
+        }
+
+        .org-column:first-child {
+            padding-left: 0;
+            border-right: 1px solid #303239;
+        }
+
+        .org-column:last-child {
+            padding-right: 0;
+        }
+
+        .org-column .subhead {
+            margin-top: 0;
+            margin-bottom: 45px;
+        }
+
+        .org-column .subhead p {
+            margin-top: 6px;
+            color: #777a82;
+            font-size: 13px;
+        }
+
+        .org-column .org-card {
+            padding: 0 0 38px;
+            margin-bottom: 38px;
+            border-bottom: 1px solid #25272c;
+        }
+
+        .org-column .org-card:last-child {
+            border-bottom: none;
+        }
+
+        .org-column .org-card h3 {
+            font-size: 20px;
+            line-height: 1.35;
+            margin: 10px 0 7px;
+        }
+
+        .org-column .org-card p,
+        .org-column .bullet {
+            color: #888b93;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .org-column .bullet {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .org-column .bullet li {
+            margin-bottom: 8px;
+        }
+
+
+        /* CERTIFICATES */
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .certificate {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: #151619;
+            transition: .25s;
+        }
+
+        .certificate:hover {
+            transform: translateY(-4px);
+            border-color: #474951;
+        }
+
+        .certificate-image {
+            height: 280px;
+            background: #191b20;
+            overflow: hidden;
+        }
+
+        .certificate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .certificate-body {
+            padding: 22px 24px 24px;
+        }
+
+        .certificate-body h3 {
+            font-size: 19px;
+            line-height: 1.35;
+        }
+
+        .certificate-body p {
+            margin-top: 8px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #888;
+        }
+
+        @media (max-width: 820px) {
+            .certificate-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificate-image {
+                height: 240px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .org-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .org-column {
+                padding: 0;
+            }
+
+            .org-column:first-child {
+                border-right: none;
+                border-bottom: 1px solid #303239;
+                padding-bottom: 50px;
+                margin-bottom: 50px;
+            }
+        }
+
+        .bullet {
+            margin-top: 10px;
+            padding-left: 17px;
+            color: #8e8f95;
+            font-size: 13px
+        }
+
+        .bullet li {
+            margin: 5px 0
+        }
+
+        .pub {
+            display: grid;
+            gap: 12px
+        }
+
+        .pub-item {
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: var(--panel)
+        }
+
+        .pub-item small {
+            color: #666
+        }
+
+        .pub-item h3 {
+            font-size: 17px;
+            margin: 4px 0
+        }
+
+        .pub-item p {
+            font-size: 13px;
+            color: #888
+        }
+
+        .contactbox {
+            border: 1px solid var(--line);
+            background: var(--panel);
+            border-radius: 25px;
+            padding: 65px 30px;
+            text-align: center
+        }
+
+        .contactbox h2 {
+            font-size: clamp(38px, 5vw, 65px);
+            letter-spacing: -3px
+        }
+
+        .contactbox p {
+            color: #888;
+            max-width: 550px;
+            margin: 13px auto 25px
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 28px 6%;
+            display: flex;
+            justify-content: space-between;
+            color: #5f6066;
+            font-size: 11px
+        }
+
+        @media(max-width:820px) {
+            nav {
+                left: 6%;
+                right: 6%;
+                transform: none;
+                justify-content: center
+            }
+
+            .logo {
+                display: none
+            }
+
+            .navlinks {
+                gap: 13px;
+                font-size: 11px
+            }
+
+            .hero {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .photo {
+                width: 210px;
+                height: 260px
+            }
+
+            .about-grid,
+            .skillgrid,
+            .projectgrid {
+                grid-template-columns: 1fr
+            }
+
+            .section-top {
+                display: block
+            }
+
+            .section-top p {
+                margin-top: 15px
+            }
+
+            h1 {
+                letter-spacing: -3px
+            }
+
+            .facts {
+                margin-top: 25px
+            }
+
+            .project-image {
+                height: 500px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="navlinks">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experiences</a>
+            <a href="#organization">Organization</a>
+            <a href="#projects">Projects</a>
+            <a href="#Certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div>
+            <div class="eyebrow">System Analysis · UI/UX Design</div>
+            <h1>Hi, I'm Roudhotul Izzah Imroatunnadhiroh.<br></h1>
+            <p>Information Systems graduate with experience in system analysis, web development, UI/UX, and data
+                analysis — turning user needs and data into practical digital solutions.</p>
+            <div class="actions">
+                <a class="btn fill" href="#projects">Explore Projects ↗</a>
+                <a class="btn fill"
+                    href="https://drive.google.com/file/d/1lV1cyNldE1amY2g61V42EuNjcqn2lEGe/view?usp=sharing">
+                    Download CV
+                </a>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="image/about me.jpg" alt="Roudhotul Izzah">
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="section-top">
+            <div>
+                <div class="num">01 / ABOUT</div>
+                <h2>A bit about me.</h2>
+            </div>
+
+        </div>
+        <div class="about-grid">
+            <p class="about-text">I’m an Information Systems graduate from UPN “Veteran” Jawa Timur with internship
+                experience as a Full-Stack Web Developer at BPBD Kota Surabaya and PT. Otak Kanan. I’m particularly
+                interested in pursuing a career as a System Analyst UI/UX Design, supported by experience in requirement
+                gathering,
+                business process analysis, system modeling, UI/UX, and web development.</p>
+            <div class="facts">
+                <div class="fact"><small>Education</small><strong>S1 Sistem Informasi</strong></div>
+                <div class="fact"><small>GPA</small><strong>3.76 / 4.00</strong></div>
+                <div class="fact"><small>Focus</small><strong>System Analysis</strong></div>
+                <div class="fact"><small>Location</small><strong>Surabaya, Indonesia</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-top">
+            <div>
+                <div class="num">02 / SKILLS</div>
+                <h2>Tools & capabilities.</h2>
+            </div>
+        </div>
+        <div class="skillgrid">
+            <div class="skill">
+                <h3>System Analysis</h3>
+                <p>Analyzing user needs and translating them into system requirements and models.</p>
+                <div class="tags"><span class="tag">Requirement Gathering</span><span class="tag">User Requirement
+                        Analysis</span><span class="tag">Business Process</span><span class="tag">Workflow</span><span
+                        class="tag">System Modeling</span></div>
+            </div>
+            <div class="skill">
+                <h3>Web Development</h3>
+                <p>Building and implementing website features based on system requirements.</p>
+                <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span
+                        class="tag">JavaScript</span><span class="tag">Python</span><span
+                        class="tag">Bootstrap</span><span class="tag">MySQL</span></div>
+            </div>
+            <div class="skill">
+                <h3>Data & Research</h3>
+                <p>Processing and analyzing data for academic research and decision support.</p>
+                <div class="tags"><span class="tag">Microsoft Excel</span><span class="tag">Spreadsheet</span><span
+                        class="tag">SPSS</span><span class="tag">Data Analysis</span></div>
+            </div>
+            <div class="skill">
+                <h3>Design & Tools</h3>
+                <p>Supporting analysis, design, documentation, and collaboration.</p>
+                <div class="tags"><span class="tag">Figma</span><span class="tag">StarUML</span><span
+                        class="tag">Draw.io</span><span class="tag">VS Code</span><span class="tag">Canva</span><span
+                        class="tag">Microsoft Office</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-top">
+            <div>
+                <div class="num">03 / EXPERIENCE</div>
+                <h2>Where I've contributed.</h2>
+            </div>
+        </div>
+        <div class="timeline">
+            <div class="job">
+                <div class="date">MARCH — JUNE 2025</div>
+                <h3>Full-Stack Website Developer · BPBD Kota Surabaya</h3>
+                <p>Performed system requirement analysis through interviews and direct observation, contributed to SIAGA
+                    Surabaya development, and presented system features and workflows to BPBD stakeholders.</p>
+            </div>
+            <div class="job">
+                <div class="date">SEPTEMBER — DECEMBER 2024</div>
+                <h3>Full-Stack Website Developer · PT. Otak Kanan</h3>
+                <p>Contributed to a React.js and Tailwind CSS Point of Sale website, implemented application features,
+                    and performed functional testing using test cases.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="organization">
+        <div class="section-top">
+            <div>
+                <div class="num">04 / ORGANIZATION</div>
+                <h2>Organization & committee.</h2>
+            </div>
+        </div>
+
+        <div class="org-columns">
+
+            <!-- ORGANIZATIONAL EXPERIENCE -->
+            <div class="org-column">
+                <div class="subhead">
+                    <div class="icon">●</div>
+                    <div>
+                        <h3>Organizational Experience</h3>
+                        <p>Organizations & student involvement</p>
+                    </div>
+                </div>
+
+                <div class="org-card">
+                    <div class="date">JANUARY 2024 — PRESENT</div>
+                    <h3>Staff Karang Taruna</h3>
+                    <div class="role">Event Division</div>
+                    <p>
+                        Planned event rundowns and session flows, coordinated event preparations with
+                        committee members and stakeholders, and served as Master of Ceremony (MC)
+                        for various formal, social, and entertainment events.
+                    </p>
+                </div>
+
+                <div class="org-card">
+                    <div class="date">MARCH 2024 — JANUARY 2025</div>
+                    <h3>Unit Kegiatan Mahasiswa Global Languages Club (UKM GLC)</h3>
+                    <div class="role">General Treasurer 1</div>
+                    <p>
+                        Managed financial transactions and annual budgeting, contributed to organizational
+                        decision-making with the BPH, collaborated across divisions, and organized
+                        fundraising activities to support UKM programs.
+                    </p>
+                </div>
+
+                <div class="org-card">
+                    <div class="date">MARCH 2023 — FEBRUARY 2024</div>
+                    <h3>Unit Kegiatan Mahasiswa Global Languages Club (UKM GLC)</h3>
+                    <div class="role">Staff Student Resources Department</div>
+                    <p>
+                        Managed member recruitment and selection, monitored and evaluated member
+                        attendance and development, served as a liaison between members and the BPH,
+                        and initiated activities to increase member engagement.
+                    </p>
+
+                </div>
+            </div>
+
+
+            <!-- COMMITTEE EXPERIENCE -->
+            <div class="org-column">
+                <div class="subhead">
+                    <div class="icon">★</div>
+                    <div>
+                        <h3>Committee Experience</h3>
+                        <p>Events & committee involvement</p>
+                    </div>
+                </div>
+
+                <div class="org-card">
+                    <div class="date">2023</div>
+                    <h3>Event Chairperson — Mini Competition</h3>
+                    <div class="role">UKM Global Languages Club</div>
+                    <p>
+                        Led the planning and execution of the event, covering its objectives, target
+                        participants, event concept, and success indicators. Successfully organized
+                        the competition with 37 participants from various majors.
+                    </p>
+                </div>
+
+                <div class="org-card">
+                    <div class="date">2023</div>
+                    <h3>Event Treasurer — SMATCO Tingkat Surabaya</h3>
+                    <div class="role">UKM Global Languages Club</div>
+                    <p>
+                        Managed event income and expenses, monitored fund allocation across divisions,
+                        and prepared periodic financial reports.
+                    </p>
+                </div>
+
+                <div class="org-card">
+                    <div class="date">2023</div>
+                    <h3>Head of Event Division — Diklat</h3>
+                    <div class="role">UKM Global Languages Club</div>
+                    <p>
+                        Led the event division in developing the event concept, activity flow, and
+                        technical execution while coordinating the team. Successfully organized the
+                        event with over 150 participants from various majors.
+                    </p>
+                </div>
+
+                <div class="org-card">
+                    <div class="date">2023</div>
+                    <h3>Logistics Division Member — Campus Visit</h3>
+                    <div class="role">UKM Global Languages Club</div>
+                    <p>
+                        Coordinated the preparation, distribution, inventory, and return of event equipment.
+                    </p>
+                </div>
+
+                <div class="org-card">
+                    <div class="date">2022</div>
+                    <h3>Public Relations Division Member — FANTASTIS Sistem Informasi</h3>
+                    <div class="role">
+                        Himpunan Mahasiswa Sistem Informasi (HIMASIFO)
+                    </div>
+                    <p>
+                        Served as a liaison between the committee and internal and external parties,
+                        while supporting event information management through social media.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-top">
+            <div>
+                <div class="num">05 / PROJECTS</div>
+                <h2>Selected work.</h2>
+            </div>
+
+        </div>
+        <div class="projectgrid">
+            <div class="project">
+                <div class="project-image">
+                    <div class="browserbar">
+                        <i class="dot"></i>
+                        <i class="dot"></i>
+                        <i class="dot"></i>
+                        <span class="path">~/projects/siaga-surabaya</span>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <img src="image/siaga.png" alt="SIAGA Surabaya preview">
+                </div>
+                <div class="project-body">
+                    <div class="project-title">
+                        <h3>SIAGA Surabaya</h3><span class="type">Web</span>
+                    </div>
+                    <p>A web-based system for managing public outreach activities, educational materials, and quizzes
+                        for BPBD Surabaya..</p>
+                    <div class="tags"><span class="tag">ReactJS</span><span class="tag">Tailwind CSS</span><span
+                            class="tag">System Analysis</span></div><a class="project-link" target="_blank"
+                        href="https://github.com/rrsfira/Manajemen-Sosialisasi">open project ↗</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <div class="browserbar">
+                        <i class="dot"></i>
+                        <i class="dot"></i>
+                        <i class="dot"></i>
+                        <span class="path">~/projects/point-of-sale</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <img src="image/pos.png" alt="Point of Sale project preview">
+                </div>
+                <div class="project-body">
+                    <div class="project-title">
+                        <h3>Point of Sale</h3><span class="type">Web</span>
+                    </div>
+                    <p>A Point-of-Sale (POS) system for managing sales transactions, products, customers, inventory, and
+                        stock.</p>
+                    <div class="tags"><span class="tag">ReactJS</span><span class="tag">Tailwind CSS</span><span
+                            class="tag">Testing</span></div><a class="project-link" target="_blank"
+                        href="https://github.com/RismaParamesti/WEB-POS">open project ↗</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <div class="browserbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span
+                            class="path">~/projects/aplikasi-jatinangor</span><span class="year">2024</span></div>
+                    <div class="mock jat">
+                        <img src="image/jatinangor.png" alt="Aplikasi Jatinangor UI/UX">
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-title">
+                        <h3>Aplikasi Jatinangor</h3><span class="type">UI / UX</span>
+                    </div>
+                    <p>Designed a restaurant service application based on user research, personas, interviews, user
+                        flows, and UI/UX design.</p>
+                    <div class="tags"><span class="tag">User Research</span><span class="tag">User Flow</span><span
+                            class="tag">Figma</span></div><a class="project-link" target="_blank"
+                        href="https://www.figma.com/design/sUupACcYmJ5aAHSfeO9Tel/Aplikasi-Jatinangor?node-id=0-1&t=h9qkfG5OWTIBTqDF-1">open
+                        design ↗</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <div class="browserbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span
+                            class="path">~/projects/kos-bu-bambang</span><span class="year">2023</span></div>
+                    <div class="mock jat">
+                        <img src="image/kos.jpg" alt="Aplikasi Jatinangor UI/UX">
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-title">
+                        <h3>Kos Bu Bambang</h3><span class="type">System Design</span>
+                    </div>
+                    <p>A web-based information system for managing property data, bookings, and payments using the
+                        Waterfall development methodology.</p>
+                    <div class="tags"><span class="tag">Requirement Analysis</span><span class="tag">UML</span><span
+                            class="tag">Waterfall</span></div><a class="project-link" target="_blank"
+                        href="https://www.figma.com/design/1iXCnCrImlXTJ6wW9HQxO1/ADSI-KLMPK-10?node-id=0-1&t=0z6QkhxMo0jl4CBO-1">open
+                        design ↗</a>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <div class="browserbar">
+                        <i class="dot"></i>
+                        <i class="dot"></i>
+                        <i class="dot"></i>
+                        <span class="path">~/projects/wbfresh</span>
+                        <span class="year">2023</span>
+                    </div>
+                    <div class="mock jat">
+                        <img src="image/wb fresh.png" alt="Aplikasi WB fresh UI/UX">
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="project-title">
+                        <h3>WBFresh </h3>
+                        <span class="type">UI / UX</span>
+                    </div>
+                    <p>
+                        Designed an Android-based drinking water ordering application to help users find and order water
+                        from local depots.
+                        Contributed to user needs analysis, ideation, Information Architecture, user flow, and UI
+                        mock-ups.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Empathy Map</span>
+                        <span class="tag">Ideation</span>
+                        <span class="tag">Information Architecture</span>
+                        <span class="tag">User Flow</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+
+                    <a class="project-link" target="_blank" href="https://bit.ly/Desain_Aplikasi_WBFRESH">
+                        open design ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="Certificates">
+        <div class="section-top">
+            <div>
+                <div class="num">06 / CERTIFICATES</div>
+                <h2>Certifications & achievements.</h2>
+            </div>
+        </div>
+
+        <div class="certificate-grid">
+            <div class="certificate">
+                <div class="certificate-image">
+                    <img src="image/bnsp.jpg" alt="BNSP Junior Web Programmer Certificate">
+                </div>
+                <div class="certificate-body">
+                    <h3>Junior Web Programmer — Kompeten</h3>
+                    <p>BNSP certification through LSP UPN “Veteran” Jawa Timur, validating competency in Junior Web
+                        Programming.</p>
+                </div>
+            </div>
+
+            <div class="certificate">
+                <div class="certificate-image">
+                    <img src="image/ept.jpg" alt="English Proficiency Test Certificate">
+                </div>
+                <div class="certificate-body">
+                    <h3>English Proficiency Test (EPT) — Score 463</h3>
+                    <p>English proficiency test issued by Pusat Bahasa UPN “Veteran” Jawa Timur with a score of 463.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="section-top">
+            <div>
+                <div class="num">07 / RESEARCH</div>
+                <h2>Academic work.</h2>
+            </div>
+        </div>
+
+        <div class="pub">
+
+            <div class="pub-item">
+                <small>Zonasi · 2026</small>
+                <h3>Analysis of SIMPEG Acceptance & Success using TAM and DeLone & McLean</h3>
+                <p>Research on employee information-system acceptance and success, supported by questionnaire and
+                    statistical analysis.</p>
+                <a class="project-link"
+                    href="https://drive.google.com/file/d/1UvH6ciZxfGeyAXAk8-5AjWb-YbBHZf54/view?usp=sharing"
+                    target="_blank">
+                    View Publication ↗
+                </a>
+            </div>
+
+            <div class="pub-item">
+                <small>JUTISI · APRIL 2024</small>
+                <h3>Rancang Bangun Sistem Informasi Pengelolaan Indekos Berbasis Website Dengan Metode Waterfall</h3>
+                <p>Publication related to the boarding-house information system project.</p>
+                <a class="project-link" href=" https://doi.org/10.35889/jutisi.v13i1.1750" target="_blank">
+                    View Publication ↗
+                </a>
+            </div>
+
+            <div class="pub-item">
+                <small>JCS · JUNE 2023</small>
+                <h3>Systematic Literature Review (SLR): Penggunaan Teknologi Big Data Dalam Keputusan Bisnis</h3>
+                <p>Literature review on the use of Big Data technology in business decision-making.</p>
+                <a class="project-link" href="https://jcs.greenpublisher.id/index.php/jcs/article/view/391"
+                    target="_blank">
+                    View Publication ↗
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <div class="contactbox">
+            <div class="num">08 / CONTACT</div>
+            <h2>Let's connect.</h2>
+            <p>Open to opportunities and collaborations in system analysis, data, technology, and digital solutions.</p>
+            <div class="actions" style="justify-content:center">
+                <a class="btn fill" href="https://mail.google.com/mail/?view=cm&fs=1&to=imroatunnadhirohizzah@gmail.com"
+                    target="_blank" aria-label="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+                <a class="btn fill" href="https://www.linkedin.com/in/Roudhotul-Izzah/" target="_blank"
+                    aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a class="btn fill" href="https://www.instagram.com/roudhotul_izzah/" target="_blank"
+                    aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a class="btn fill" href="https://wa.me/6285607157379" target="_blank" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <span>© 2026 Roudhotul Izzah</span>
+        <span>Information Systems · Surabaya</span>
+    </footer>
+</body>
+
+</html>
