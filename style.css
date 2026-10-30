@@ -175,9 +175,15 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 25px;
+    gap: 30px;
     align-items: center;
+    justify-content: center;
+
+    width: 975%;
+    max-width: 800px;
     padding: 15px 25px;
+    box-sizing: border-box;
+
     border: 1px solid #292a30;
     border-radius: 999px;
     background: rgba(13, 14, 17, .86);
@@ -379,10 +385,8 @@ section {
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
-    margin-top: 17px;
+    gap: 8px;
 }
-
 .tag {
     font-size: 11px;
     color: #aaa;
@@ -472,7 +476,7 @@ section {
 }
 
 .project-image {
-    height: 230px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     background: #191b20;
@@ -558,19 +562,20 @@ section {
 }
 
 .project-body {
-    padding: 24px 25px 26px;
+    padding: 15px 25px 18px;
 }
 
 .project-title {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    align-items: start;
+    align-items: center;
 }
 
 .project h3 {
     font-size: 23px;
     letter-spacing: -.6px;
+    margin: o;
 }
 
 .type {
@@ -585,12 +590,14 @@ section {
 .project p {
     font-size: 13px;
     color: #8c8d93;
-    margin-top: 8px;
+    line-height: 1.5;
+    margin-top: 6px;
+    margin-bottom: 12px;
 }
 
 .project-link {
     display: inline-block;
-    margin-top: 22px;
+    margin-top: 15px;
     font: 600 13px monospace;
     color: #eee;
 }
@@ -1043,8 +1050,5 @@ select {
         margin-top: 25px;
     }
 
-    .project-image {
-        height: 500px;
-    }
 
 }
